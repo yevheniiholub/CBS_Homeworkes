@@ -23,19 +23,23 @@ public class Parity {
         // Кастимо зчитане число і перевіряємо його через "Побітове і", якщо результат = 1, то число непарне, якщо
         // == 0 то непарне
         if (((byte) userInteger & CMP_INTEGER) == 1) {
-            System.out.printf("Число %d не парне!", userInteger);
+            System.out.printf("Число %d не парне!\n", userInteger);
         } else {
-            System.out.printf("Число %d парне!", userInteger);
+            System.out.printf("Число %d парне!\n", userInteger);
+        }
+
+        // Другий варіант рішення
+        if ( userInteger % 2 != 0 ) {
+            System.out.printf("Число %d не парне!\n", userInteger);
+        } else {
+            System.out.printf("Число %d парне!\n", userInteger);
         }
         /*
             Приклади виводу:
-            Введіть число :
-            4513
-            Число 4513 не парне!
-
-            Введіть число :
-            65534
-            Число 65534 парне!
+           Введіть число :
+           7
+           Число 7 не парне!
+           Число 7 не парне!
          */
     }
 }

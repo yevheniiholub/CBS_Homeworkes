@@ -11,10 +11,11 @@ public class PowerOfTwo {
         двойки или нет.
      */
     public static void main(String[] args) {
-        int         userInteger;            // Число зчитане від користувача
-        Scanner     userInput;              // Зміння для зчитування інформації з консолі
-        int         localPowOfTwo = 2;      // Змінна для порівняння, яка при кроці циклу зміщує біт вліво
-        int         powValue = 1;           // Кількість ітерацій до знаходження степіні
+        final int   maxValueChack = 1073741824; // Максимальне значення степіні двійки в діапазоні int
+        int         userInteger;                // Число зчитане від користувача
+        int         localPowOfTwo = 2;          // Змінна для порівняння, яка при кроці циклу зміщує біт вліво
+        int         powValue = 1;               // Кількість ітерацій до знаходження степіні
+        Scanner     userInput;                  // Зміння для зчитування інформації з консолі
 
         // Зчитування числа від користувача
         userInput = new Scanner(System.in);                 // Ініціалізація сканеру
@@ -23,7 +24,7 @@ public class PowerOfTwo {
 
         // Поки число з яким порівнюється число користувача менша ніж максимальна степінь двійки яка може зберігатися
         // в діапазоні int
-        while (localPowOfTwo < 1073741824 )
+        while (localPowOfTwo < maxValueChack )
         {
             // Якщо локальна степінь двійки дорівнює значенню користувача
             if (userInteger == localPowOfTwo)
