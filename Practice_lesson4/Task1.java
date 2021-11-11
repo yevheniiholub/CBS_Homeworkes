@@ -26,7 +26,7 @@ public class Task1 {
                       і на маю думку дана констукція вигядає більш читабельною ніж if else для даного
                       випадку
          */
-        switch (userString.toUpperCase(Locale.ROOT))
+        switch (userString.toUpperCase())
         {
             case "СІЧЕНЬ":
                 System.out.println("Номер введеного місяця 1");

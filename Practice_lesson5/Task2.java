@@ -8,21 +8,25 @@ public class Task2 {
         Что такое таблица истинности, если вы не знаете - загуглить самостоятельно.
      */
     public static void main(String[] args) {
-        byte a;
-        byte b;
+        byte variableA;
+        byte variableB;
 
         System.out.printf("|| A || B || A ^ B || A | B || A & B ||\n");
-        a = 0;
-        b = 0;
-        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", a, b, (a ^ b) , (a | b), (a & b));
-        a = 0;
-        b = 1;
-        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", a, b, (a ^ b) , (a | b), (a & b));
-        a = 1;
-        b = 0;
-        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", a, b, (a ^ b) , (a | b), (a & b));
-        a = 1;
-        b = 1;
-        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", a, b, (a ^ b) , (a | b), (a & b));
+        variableA = 0;
+        variableB = 0;
+        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", variableA, variableB,
+                (variableA ^ variableB) , (variableA | variableB), (variableA & variableB));
+        variableA = 0;
+        variableB = 1;
+        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", variableA, variableB,
+                (variableA ^ variableB) , (variableA | variableB), (variableA & variableB));
+        variableA = 1;
+        variableB = 0;
+        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", variableA, variableB,
+                (variableA ^ variableB) , (variableA | variableB), (variableA & variableB));
+        variableA = 1;
+        variableB = 1;
+        System.out.printf("|| %d || %d ||   %d   ||   %d   ||   %d   ||\n", variableA, variableB,
+                (variableA ^ variableB) , (variableA | variableB), (variableA & variableB));
     }
 }
