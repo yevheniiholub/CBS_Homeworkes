@@ -14,9 +14,8 @@ public class Arrays {
      * Ініціалізація массиву вказаним розміром
      */
     public static int [] initArrayByRandom(int size){
-        int [] resultArray;
+        int [] resultArray = new int [size];            // Ініціалізація масиву
 
-        resultArray = new int [size];            // Ініціалізація масиву
         for (int i = 0; i < resultArray.length; i++){
             resultArray[i] = (int)(Math.random()*1000);     // Присвоєння кожному елементу довільного значення
         }
