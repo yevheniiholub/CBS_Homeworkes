@@ -42,11 +42,11 @@ public class Arithmetics {
 
 
     public static void main(String[] args) {
-        int         userFirstInteger;
-        int         userSecondInteger;
-        String      userOperator;
-        String      userMessage;
-        Scanner     userInput;
+        int userFirstInteger;
+        int userSecondInteger;
+        String userOperator;
+        String userMessage;
+        Scanner userInput;
 
         userMessage = "Результат %d \n";
 
@@ -62,8 +62,7 @@ public class Arithmetics {
         System.out.println("Введіть оператор :");
         userOperator = userInput.next();
 
-        switch (userOperator)
-        {
+        switch (userOperator) {
             case "+":
                 System.out.println(String.format(userMessage,add(userFirstInteger, userSecondInteger)));
                 break;
