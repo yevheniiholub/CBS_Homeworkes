@@ -26,8 +26,9 @@ public class Task2 {
         final String    REG_NAME = "Evgeniy";
         final int       NAME_RATE = 10;
 
-        if (argName.equals(REG_NAME))
+        if (argName.equals(REG_NAME)) {
             return NAME_RATE;
+        }
         return 0;
     }
 
@@ -35,11 +36,11 @@ public class Task2 {
      * Перегрузка перевірки інформації користувача: пароль і дата народження
      */
     public static int checkUserInfo(String argPassword, int argBirthDate ){
-        final String    REG_PASS = "qwerty";
-        final int       REG_BIRTH_DATE = 29071996;
-        final int       PASS_RATE = 15;
-        final int       BIRTH_DATE_RATE = 15;
-        int             result = 0;
+        final String REG_PASS = "qwerty";
+        final int REG_BIRTH_DATE = 29071996;
+        final int PASS_RATE = 15;
+        final int BIRTH_DATE_RATE = 15;
+        int result = 0;
 
         if (argPassword.equals(REG_PASS)){
             result += PASS_RATE;
@@ -54,11 +55,11 @@ public class Task2 {
      * Перегрузка перевірки інформації користувача: питання і відповідь
      */
     public static int checkUserInfo(String argQuestion, String argAnswer){
-        final String    REG_QUESTION = "Улюблений колір?";
-        final String    REG_ANSWER = "Зелений";
-        final int       QUESTION_RATE = 15;
-        final int       ANSWER_RATE = 15;
-        int             result = 0;
+        final String REG_QUESTION = "Улюблений колір?";
+        final String REG_ANSWER = "Зелений";
+        final int QUESTION_RATE = 15;
+        final int ANSWER_RATE = 15;
+        int result = 0;
 
         if (argQuestion.equals(REG_QUESTION)){
             result += QUESTION_RATE;
@@ -73,11 +74,11 @@ public class Task2 {
      * Перегрузка перевірки інформації користувача: номер замовлення і електронна адреса
      */
     public static int checkUserInfo(int lastOrderNumb, String argMail){
-        final int       LAST_ORDER = 43241;
-        final String    REG_MAIL = "eveniy@mail.com";
-        final int       MAIL_RATE = 15;
-        final int       ORDER_RATE = 15;
-        int             result = 0;
+        final int LAST_ORDER = 43241;
+        final String REG_MAIL = "eveniy@mail.com";
+        final int MAIL_RATE = 15;
+        final int ORDER_RATE = 15;
+        int result = 0;
 
         if (argMail.equals(REG_MAIL)){
             result += MAIL_RATE;
@@ -97,9 +98,9 @@ public class Task2 {
         String outMessage;
         String outMessageSecondPos;
         String outMessageSecondNeg;
-        int    userOrder;
-        int    userBirthDate;
-        int    result;
+        int userOrder;
+        int userBirthDate;
+        int result;
 
         // Зчитування данних для відновлення доступу
         System.out.println("Введіть логін:");
