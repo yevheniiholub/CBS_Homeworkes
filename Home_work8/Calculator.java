@@ -3,7 +3,7 @@ package Home_work8;
 import java.util.Scanner;
 
 public class Calculator {
-
+    static final int FIVE = 5;
     /*
         Задание
         Используя IntelliJ IDEA, создайте класс Calculator.
@@ -23,7 +23,6 @@ public class Calculator {
      *  Перегрузка обчислення для першого аргументу
      */
     public static int calculate(int firstArg, short secondArg, long thirdArg){
-        final int FIVE = 5;
         return firstArg / FIVE;
     }
 
@@ -31,7 +30,6 @@ public class Calculator {
      *  Перегрузка обчислення для другого аргументу
      */
     public static int calculate(long firstArg, int secondArg, short thirdArg){
-        final int FIVE = 5;
         return secondArg / FIVE;
     }
 
@@ -39,7 +37,6 @@ public class Calculator {
      *  Перегрузка обчислення для третього аргументу
      */
     public static int calculate(short firstArg, long secondArg, int thirdArg){
-        final int FIVE = 5;
         return thirdArg / FIVE;
     }
 
