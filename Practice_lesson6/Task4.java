@@ -13,10 +13,12 @@ public class Task4 {
         Scanner     userInput;
 
         // Ініціалізація позитивного і негативного повідомленнь
-        userOutputPositiveMsg = "Шановний клієнте, раді вам повідомити що ваше прохання в наданні кредиту в суммі %d " +
-                "на термін %d місяців успішно одобрено!\n";
-        userOutputNegativeMsg = "Шановний кліэнте, нажаль не можемо видати вам кредит в суммі %d на термін %d місяців" +
-                "\nнатомість можемо запропонувати вам зменшити кредит на %d, або збільшити термін кредиту на %d\n";
+
+        userOutputPositiveMsg = "Шановний клієнте, раді вам повідомити що ваше прохання в наданні кредиту в суммі " +
+                "%.2f на термін %d місяців успішно одобрено!\n";
+        userOutputNegativeMsg = "Шановний кліэнте, нажаль не можемо видати вам кредит в суммі %.2f на термін %d " +
+                "місяців\nнатомість можемо запропонувати вам зменшити кредит на %.2f, або збільшити термін кредиту " +
+                "на %.2f\n";
 
         // Зчитування зарплати
         userInput = new Scanner(System.in);
@@ -41,16 +43,18 @@ public class Task4 {
         // В разі якщо добуток сумми від залишку вписується в термін вказаний користувачем то тоді виводим повідомлення
         // з позитивною відповіддю
         if (userSum / userRemainder <= userTerm) {
-            System.out.println(String.format(userOutputPositiveMsg, (int)userSum, userTerm ));
+
+            System.out.println(String.format(userOutputPositiveMsg, userSum, userTerm ));
         }
         // В іншому випадку виводимо негативну відповідь з пропозицією зменшення сумми кредиту, або збільшенням терміну
         else {
             // Останній аргумент це тернарник, який перевіряє чи потрібно нам заокруглювати число в вищу сторону
             // якщо оезутьтат ділення чисел з плавоючою точкою більше ніж результат ділення цілочисленних значеннь
             // то тоді виводимо результат скащений в цілочисельний + 1, якщо не більше то тоді просто скащений результат
-            System.out.println(String.format(userOutputNegativeMsg, (int)userSum, userTerm, (int)userRemainder,
-                    (userSum / userRemainder) < (int)(userSum / userRemainder) ? (int)(userSum / userRemainder) + 1 :
-                            (int)(userSum / userRemainder)));
+
+            System.out.println(String.format(userOutputNegativeMsg, userSum, userTerm, userRemainder,
+                    (userSum / userRemainder) < (userSum / userRemainder) ? (userSum / userRemainder) + 1 :
+                            (userSum / userRemainder)));
         }
     }
 }
