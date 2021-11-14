@@ -27,8 +27,8 @@ public class Volume {
         S = 2 * Math.PI * R * (R + h);
 
         // Вивід
-        System.out.println("Об'єм = " + V);
-        System.out.println("Площа = " + S);
+        System.out.printf("Об'єм = %.3f\n", V);
+        System.out.printf("Площа = = %.3f\n", S);
 
         // Результат : Об'єм = 31808.625617596656
         //             Площа = 5654.8667764616275
