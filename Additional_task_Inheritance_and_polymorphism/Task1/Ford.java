@@ -5,7 +5,7 @@ package Additional_task_Inheritance_and_polymorphism.Task1;
  */
 public class Ford {
     private String modelName;       // Назва модельного ряду
-    private String canNumbers;      // Номера машини
+    private String carNumbers;      // Номера машини
     private int yearOfCreation;     // Рік виробництва
 
     // Конструктор
@@ -24,12 +24,12 @@ public class Ford {
         this.modelName = modelName;
     }
 
-    public String getCanNumbers() {
-        return canNumbers;
+    public String getCarNumbers() {
+        return carNumbers;
     }
 
-    public void setCanNumbers(String canNumbers) {
-        this.canNumbers = canNumbers;
+    public void setCarNumbers(String carNumbers) {
+        this.carNumbers = carNumbers;
     }
 
     public int getYearOfCreation() {
