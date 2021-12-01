@@ -5,5 +5,4 @@ public abstract class AbstractHandler {
     public abstract void create();
     public abstract void change();
     public abstract void save();
-
 }
