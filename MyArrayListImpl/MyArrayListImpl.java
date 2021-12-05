@@ -1,6 +1,7 @@
 package MyArrayListImpl;
 
 public class MyArrayListImpl implements MyList{
+    private final int INITIAL_ARRAY_SIZE = 10;
     private String [] strArray;
     private int tail;
 
@@ -9,13 +10,20 @@ public class MyArrayListImpl implements MyList{
     }
 
     public MyArrayListImpl() {
-        strArray = new String[10];
+        strArray = new String[INITIAL_ARRAY_SIZE];
         tail = 0;
     }
 
     private void rangeCheck(int position) {
         if (position < 0 || position > tail)
             throw new IndexOutOfBoundsException("Position :" + position + " out of bounds");
+    }
+
+    private String [] extendArray(String [] argArray){
+        String [] BufferArray = new String[strArray.length * 2];
+        System.arraycopy(strArray, 0, BufferArray, 0, strArray.length);
+        strArray = BufferArray;
+        return (BufferArray);
     }
 
     @Override
@@ -27,9 +35,7 @@ public class MyArrayListImpl implements MyList{
     public void add(String strArg, int position) {
         rangeCheck(position);
         if (strArray.length < tail + 1){
-            String [] BufferArray = new String[strArray.length * 2];
-            System.arraycopy(strArray, 0, BufferArray, 0, strArray.length);
-            strArray = BufferArray;
+            strArray = extendArray(strArray);
         }
         System.arraycopy(strArray, position, strArray, position + 1, tail - position);
         set(strArg, position);
@@ -43,8 +49,9 @@ public class MyArrayListImpl implements MyList{
 
     @Override
     public boolean remove(String strArg) {
-        if (indexOf(strArg) > 0){
-            remove(indexOf(strArg) + 1);
+        int index = indexOf(strArg);
+        if (index > 0){
+            remove(index + 1);
             return true;
         } else {
             return false;
@@ -80,7 +87,7 @@ public class MyArrayListImpl implements MyList{
 
     @Override
     public int indexOf(String strArg) {
-        for (int i = 0; i < tail; i++) {
+        for (int i = 0; i < tail - 1; i++) {
             if (strArray[i].equals(strArg)){
                 return i;
             }
