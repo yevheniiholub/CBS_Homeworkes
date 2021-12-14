@@ -61,9 +61,12 @@ public class MyArrayListImpl implements MyList{
     @Override
     public String remove(int position) {
         String removedString;
+        int movedPos = tail - position - 1;
         rangeCheck(position);
         removedString = strArray[position];
-        System.arraycopy(strArray, position, strArray, position - 1, tail - position);
+        if (movedPos > 0) {
+            System.arraycopy(strArray, position, strArray, position - 1, tail - position);
+        }
         set(null, tail - 1);
         tail--;
         return removedString;
@@ -87,9 +90,17 @@ public class MyArrayListImpl implements MyList{
 
     @Override
     public int indexOf(String strArg) {
-        for (int i = 0; i < tail - 1; i++) {
-            if (strArray[i].equals(strArg)){
-                return i;
+        if (strArg == null){
+            for (int i = 0; i < tail - 1; i++) {
+                if (strArray[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < tail - 1; i++) {
+                if (strArray[i].equals(strArg)) {
+                    return i;
+                }
             }
         }
         return -1;
