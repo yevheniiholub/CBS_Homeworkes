@@ -26,15 +26,16 @@ public class Car implements Comparable { //<Car>{
 
     // Сортируем по скорости/цене
     public int compareTo(Object o) {    // public int compareTo(Car o) {
-        int temp = this.speed - ((Car)o).speed;   // int temp = this.speed - o.speed;
+        Car cmpCar = (Car)o;
+        int temp = this.speed - cmpCar.speed;   // int temp = this.speed - o.speed;
         int tempPrice;
         int tempModel;
         if (temp == 0) {
-            tempPrice =  this.price - ((Car)o).price;
+            tempPrice =  this.price - cmpCar.price;
             if (tempPrice == 0){
-                tempModel = this.model.compareTo(model);
+                tempModel = this.model.compareTo(cmpCar.model);
                 if (tempModel == 0) {
-                    return (this.color.compareTo(color));
+                    return (this.color.compareTo(cmpCar.color));
                 }
                 else {
                     return tempModel;
