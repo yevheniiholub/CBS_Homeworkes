@@ -90,17 +90,9 @@ public class MyArrayListImpl implements MyList{
 
     @Override
     public int indexOf(String strArg) {
-        if (strArg == null){
-            for (int i = 0; i < tail - 1; i++) {
-                if (strArray[i] == null) {
-                    return i;
-                }
-            }
-        } else {
-            for (int i = 0; i < tail - 1; i++) {
-                if (strArray[i].equals(strArg)) {
-                    return i;
-                }
+        for (int i = 0; i < tail - 1; i++) {
+            if (strArg == strArray[i] && strArg == null || strArg.equals(strArray[i])) {
+                return i;
             }
         }
         return -1;
