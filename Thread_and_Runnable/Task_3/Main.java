@@ -19,8 +19,8 @@ public class Main {
         ptVar2.setPriority(Thread.NORM_PRIORITY);
         ptVar3.setPriority(Thread.MAX_PRIORITY);
 
-        ptVar3.run();
-        ptVar2.run();
-        ptVar1.run();
+        ptVar3.start();
+        ptVar2.start();
+        ptVar1.start();
     }
 }
