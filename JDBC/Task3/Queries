@@ -1,0 +1,8 @@
+insert simpleTable (name, age, phone) values ('Yevhenii', 25, '46546541')
+insert simpleTable (name, age, phone) values ('Gena', 19, '1231243')
+insert simpleTable (name, age, phone) values ('Vova', 32, '64564577')
+insert simpleTable (name, age, phone) values ('Roma', 26, '47456543')
+insert simpleTable (name, age, phone) values ('Bogdan', 45, '9797865')
+update simpleTable set name = 'Valid' where age < 25
+delete from simpleTable where age > 25
+select * from simpleTable
