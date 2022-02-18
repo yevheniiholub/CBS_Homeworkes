@@ -24,25 +24,51 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        UserInfo user = new UserInfo();
 
+    public static void setName(UserInfo user) {
         System.out.println("Введіть ім'я");
         user.setName(Optional.ofNullable(new Scanner(System.in).nextLine()).orElse("Default"));
+    }
+
+    public static void setLogin(UserInfo user) {
         try {
             System.out.println("Введіть логін");
             user.setLogin(Optional.ofNullable(new Scanner(System.in).nextLine()).
                     orElseThrow((() -> new LoginNotInputError("Login not provided"))));
+        } catch (LoginNotInputError e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void setPassword(UserInfo user) {
+        try {
             System.out.println("Введіть пароль");
             user.setPassword(Optional.ofNullable(new Scanner(System.in).nextLine()).
                     orElseThrow((() -> new PasswordNotInputError("Password not provided"))));
-        } catch (LoginNotInputError | PasswordNotInputError e) {
+        } catch (PasswordNotInputError e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    public static void setGender(UserInfo user) {
         System.out.println("Введіть стать");
         user.setGender(Optional.ofNullable(new Scanner(System.in).nextLine()).orElse("Unknown"));
+    }
+
+    public static void setBirthdate(UserInfo user) {
         System.out.println("Введіть дату народження");
         user.setBirthDay(Optional.of(new Scanner(System.in).nextInt()).orElse(29071996));
+    }
+
+
+    public static void main(String[] args) {
+        UserInfo user = new UserInfo();
+
+        setName(user);
+        setLogin(user);
+        setPassword(user);
+        setGender(user);
+        setBirthdate(user);
         user.setId(new Random().nextInt());
         user.setRegDate(LocalDate.now());
 
