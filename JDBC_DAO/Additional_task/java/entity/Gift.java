@@ -43,20 +43,14 @@ public class Gift{
                             Integer.parseInt(oneSweetInfo[3]), Integer.parseInt(oneSweetInfo[4]),
                             Integer.parseInt(oneSweetInfo[5]), oneSweetInfo[6]));
                 } else {
-                    sweets.add(null);
+                    sweets.add(new Sweet("Unknown", 0, 0, 0));
                 }
             }
         }
     }
 
     public int calculateSweetsWeight() {
-        int result;
-
-        result = 0;
-        for (Sweet sweet : sweets) {
-            result += sweet.getWeight();
-        }
-        return result;
+        return sweets.stream().map(Sweet::getWeight).reduce(0, Integer::sum);
     }
 
     public void sortByCalories() {

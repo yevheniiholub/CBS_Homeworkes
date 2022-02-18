@@ -1,13 +1,13 @@
 package JDBC_DAO.Task_2.java.logic;
 
 import JDBC_DAO.Additional_task.java.logic.SweetReader;
+import JDBC_DAO.Task_2.java.dao.SweetDao;
 import JDBC_DAO.Task_2.java.dao.impl.SweetDaoImpl;
-import JDBC_DAO.Task_2.java.entity.Candy;
-import JDBC_DAO.Task_2.java.entity.Cookie;
+import JDBC_DAO.Task_2.java.dao.impl.SweetFactory;
 import JDBC_DAO.Task_2.java.entity.Gift;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /*
     Задание
@@ -25,13 +25,24 @@ public class Main {
 
     public static void main(String[] args) {
         List<String> sweetsInit = SweetReader.readSweets();
+        SweetFactory factory = SweetFactory.getInstance();
+        SweetDao candyDao = factory.getCandyDao();
+        SweetDao cookieDao = factory.getCookieDao();
+        SweetDao sweetDao = factory.getSweetDao();
+        Consumer<String[]> sweetInitHandler = strings -> {
+            if (strings[0].equals("Candy")) {
+                candyDao.add(strings);
+            } else if (strings[0].equals("Cookie")) {
+                cookieDao.add(strings);
+            } else {
+                sweetDao.add(strings);
+            }
+        };
 
-        for (String sweet : sweetsInit) {
-            sweetDao.add(sweet);
-        }
+        sweetsInit.stream().map(x -> x.split(", ")).forEach(sweetInitHandler);
 
-        sweetDao.sortGift();
-        System.out.println(sweetDao.calculateWeightOfGift());
+        Gift.getGift().sortByCalories();
+        System.out.println(Gift.getGift().calculateSweetsWeight());
         System.out.println(sweetDao.get(50, 250));
     }
 }

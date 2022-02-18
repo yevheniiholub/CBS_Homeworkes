@@ -1,6 +1,6 @@
 package JDBC_DAO.Task_2.java.entity;
 
-import JDBC_DAO.Additional_task.java.logic.SweetReader;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
@@ -8,11 +8,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Data
 @ToString
 public class Gift {
+    private static Gift gift;
     private List<Sweet> sweets;
 
+    private Gift () {
+        sweets = new ArrayList<>();
+    }
+
+    public static Gift getGift() {
+        if (gift == null) {
+            gift = new Gift();
+        }
+        return gift;
+    }
+
+    public List<Sweet> getSweets() {
+        return sweets;
+    }
 
     public int calculateSweetsWeight() {
         int result;
